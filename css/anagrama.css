@@ -1,0 +1,35 @@
+/* Anagrama — specific styles */
+
+.tiles-wrap {
+  display: none;
+  margin-top: 1.4rem;
+  gap: 1.2rem;
+  flex-direction: column;
+}
+
+.tiles-wrap.show { display: flex; animation: fadeInUp 0.4s var(--ease) both; }
+
+.tiles-row { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.tiles-row .tiles-label { font-size: 0.72rem; color: var(--ink-2); font-weight: 600; letter-spacing: 0.03em; }
+
+.tiles { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.tile {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--glass-strong);
+  border: 1px solid var(--line);
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink-1);
+  text-transform: uppercase;
+  animation: popIn 0.35s var(--ease) both;
+}
+
+.tile.match { border-color: var(--success); color: #6ee7b7; background: rgba(52, 211, 153, 0.12); }
+.tile.miss { border-color: var(--danger); color: #fca5a5; background: rgba(248, 113, 113, 0.1); }

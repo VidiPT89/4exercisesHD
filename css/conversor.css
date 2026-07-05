@@ -1,0 +1,78 @@
+/* Conversor de Temperatura — specific styles */
+
+.gauge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+}
+
+.thermo {
+  position: relative;
+  width: 34px;
+  height: 160px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.thermo::after {
+  content: '';
+  position: absolute;
+  left: 6px; right: 6px; bottom: 6px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #fb7185);
+  z-index: 2;
+}
+
+.thermo-fill {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  height: 10%;
+  border-radius: 999px 999px 0 0;
+  background: linear-gradient(0deg, #fb7185, #f97316 55%, #38bdf8);
+  transition: height 0.6s var(--ease);
+  z-index: 1;
+}
+
+.gauge-info { flex: 1; }
+
+.gauge-value {
+  font-family: var(--font-head);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gauge-sub { color: var(--ink-2); font-size: 0.82rem; margin-top: 0.4rem; }
+
+.gauge-scale {
+  position: relative;
+  margin-top: 0.9rem;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #38bdf8, #f97316 55%, #fb7185);
+}
+
+.gauge-marker {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #0a0a0f;
+  transform: translate(-50%, -50%);
+  transition: left 0.6s var(--ease);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}

@@ -1,0 +1,50 @@
+/* Contador de Vogais — specific styles */
+
+.preview {
+  margin-top: 0.9rem;
+  padding: 0.9rem 1rem;
+  min-height: 3.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 1rem;
+  line-height: 1.7;
+  word-break: break-word;
+  color: var(--ink-1);
+}
+
+.preview:empty::before {
+  content: 'A pré-visualização das vogais aparece aqui enquanto escreves...';
+  color: var(--ink-2);
+  font-size: 0.85rem;
+}
+
+.vowel {
+  display: inline-block;
+  color: #0a0a0f;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 4px;
+  padding: 0 2px;
+  font-weight: 700;
+  animation: popIn 0.25s var(--ease) both;
+}
+
+.counter-big {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.counter-big .num {
+  font-family: var(--font-head);
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+
+.counter-big .label { color: var(--ink-2); font-size: 0.85rem; }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt" class="theme-palindromo">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Palíndromo — 4 Exercises</title>
+<meta name="description" content="Verifica se uma palavra ou frase é um palíndromo, com um espelho de texto animado ao vivo." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230b0d16'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle'%3E%F0%9F%94%81%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/palindromo.css" />
+</head>
+<body>
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-mark">4x</span>4 Exercises</a>
+    <nav class="nav-links">
+      <a href="anagrama.html">🔤 Anagrama</a>
+      <a href="contador.html">🔢 Vogais</a>
+      <a href="conversor.html">🌡️ Temperatura</a>
+      <a href="palindromo.html">🔁 Palíndromo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="exercise-hero">
+    <span class="badge">Exercício 04 · Arrays</span>
+    <h1>Palíndromo</h1>
+    <p class="lead">Um palíndromo lê-se da mesma forma ao contrário. Escreve uma palavra ou frase e vê o espelho em tempo real.</p>
+  </section>
+
+  <section class="panel">
+    <div class="field">
+      <label for="texto">Texto</label>
+      <input class="input" type="text" id="texto" placeholder="Escreve uma palavra ou uma frase..." autocomplete="off" />
+    </div>
+
+    <div class="mirror">
+      <div class="mirror-side" id="original"></div>
+      <div class="mirror-icon" id="mirrorIcon">⇄</div>
+      <div class="mirror-side" id="invertido"></div>
+    </div>
+    <div class="confetti-layer" id="confetti"></div>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="verificar()">Verificar</button>
+      <button class="btn btn-ghost" onclick="limpar()">Limpar</button>
+    </div>
+
+    <div class="result" id="resultado"></div>
+
+    <details class="how">
+      <summary>Como funciona o código</summary>
+      <div class="how-body">
+        <p>O texto é dividido em letras com <code>split("")</code>, invertido com <code>reverse()</code> e reconstruído com <code>join("")</code>. Se o resultado for igual ao texto original, é um palíndromo.</p>
+        <pre>const invertido = texto.split("").reverse().join("");
+texto === invertido // true → palíndromo</pre>
+      </div>
+    </details>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Developed by <strong>David Arsénio Martins</strong> — <a href="https://ividi.dev/" target="_blank" rel="noopener">ividi.dev</a></p>
+  <p class="fine-print">MIT License · <a href="https://github.com/VidiPT89/4exercisesHD" target="_blank" rel="noopener">Código no GitHub</a></p>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/palindromo.js"></script>
+</body>
+</html>

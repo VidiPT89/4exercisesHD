@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>4 Exercises — Desafios de Lógica em JavaScript</title>
+<meta name="description" content="Quatro exercícios interativos de JavaScript: anagrama, contador de vogais, conversor de temperatura e palíndromo. Por David Arsénio Martins." />
+
+<meta property="og:title" content="4 Exercises — Desafios de Lógica em JavaScript" />
+<meta property="og:description" content="Quatro exercícios interativos de lógica em JavaScript, com um design moderno e animado." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ividi.dev/" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230b0d16'/%3E%3Ctext x='50' y='66' font-size='54' font-family='sans-serif' font-weight='700' fill='%23f59e0b' text-anchor='middle'%3E4x%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-mark">4x</span>4 Exercises</a>
+    <nav class="nav-links">
+      <a href="anagrama.html">🔤 Anagrama</a>
+      <a href="contador.html">🔢 Vogais</a>
+      <a href="conversor.html">🌡️ Temperatura</a>
+      <a href="palindromo.html">🔁 Palíndromo</a>
+    </nav>
+  </div>
+</header>
+
+<main class="home">
+  <section class="hero">
+    <span class="kicker"><span class="dot"></span> live demo · vanilla JS</span>
+    <h1>4 exercícios de <span class="grad">lógica em JavaScript</span></h1>
+    <p>Quatro mini-desafios clássicos — manipulação de strings, loops, condicionais e DOM —
+       reconstruídos com uma interface moderna, animada e pronta para demonstração ao vivo.</p>
+    <div class="stack">
+      <span>HTML5</span>
+      <span>CSS3</span>
+      <span>JavaScript</span>
+      <span>Zero dependências</span>
+    </div>
+  </section>
+
+  <section class="grid" id="cards">
+    <a href="anagrama.html" class="card">
+      <div class="card-top">
+        <div class="card-icon">🔤</div>
+        <div class="card-arrow">↗</div>
+      </div>
+      <h3>Anagrama</h3>
+      <p>Verifica se duas palavras são anagramas comparando letras ordenadas.</p>
+      <span class="card-tag">split · sort · join</span>
+    </a>
+
+    <a href="contador.html" class="card">
+      <div class="card-top">
+        <div class="card-icon">🔢</div>
+        <div class="card-arrow">↗</div>
+      </div>
+      <h3>Contador de Vogais</h3>
+      <p>Percorre um texto letra a letra e conta as vogais em tempo real.</p>
+      <span class="card-tag">for loop · includes</span>
+    </a>
+
+    <a href="conversor.html" class="card">
+      <div class="card-top">
+        <div class="card-icon">🌡️</div>
+        <div class="card-arrow">↗</div>
+      </div>
+      <h3>Conversor de Temperatura</h3>
+      <p>Converte entre Celsius e Fahrenheit com um termómetro animado.</p>
+      <span class="card-tag">parseFloat · fórmula</span>
+    </a>
+
+    <a href="palindromo.html" class="card">
+      <div class="card-top">
+        <div class="card-icon">🔁</div>
+        <div class="card-arrow">↗</div>
+      </div>
+      <h3>Palíndromo</h3>
+      <p>Inverte o texto e compara com o original, com espelho ao vivo.</p>
+      <span class="card-tag">reverse · compare</span>
+    </a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Developed by <strong>David Arsénio Martins</strong> — <a href="https://ividi.dev/" target="_blank" rel="noopener">ividi.dev</a></p>
+  <p class="fine-print">MIT License · <a href="https://github.com/VidiPT89/4exercisesHD" target="_blank" rel="noopener">Código no GitHub</a></p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

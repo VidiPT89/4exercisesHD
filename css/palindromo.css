@@ -1,0 +1,66 @@
+/* Palíndromo — specific styles */
+
+.mirror {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.mirror-side {
+  flex: 1;
+  min-height: 3.2rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  word-break: break-word;
+  color: var(--ink-1);
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.mirror-side:empty::before { content: '—'; color: var(--ink-2); }
+
+.mirror-side.match {
+  border-color: var(--success);
+  color: #6ee7b7;
+  background: rgba(52, 211, 153, 0.08);
+}
+
+.mirror-icon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--glass-strong);
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+  font-size: 1rem;
+  transition: transform 0.4s var(--ease), color 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.mirror-icon.spin { transform: rotate(180deg); color: var(--success); border-color: var(--success); }
+
+.confetti-layer {
+  position: relative;
+  height: 0;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  animation: confettiFall 1s ease-out forwards;
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(90px) rotate(280deg); opacity: 0; }
+}
