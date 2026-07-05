@@ -1,5 +1,113 @@
 /* Landing page specific styles */
 
+/* ---------- intro splash ---------- */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  background: radial-gradient(120% 120% at 50% -10%, var(--bg-2) 0%, var(--bg-1) 45%, var(--bg-0) 100%);
+  transition: opacity 0.6s var(--ease);
+}
+
+.splash.hide { opacity: 0; pointer-events: none; }
+
+.splash-inner {
+  text-align: center;
+  animation: fadeInUp 0.7s var(--ease) both;
+}
+
+.splash-mark {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 1.8rem;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #0a0a0f;
+  background: linear-gradient(135deg, #f59e0b, #f472b6 55%, #22d3ee);
+  background-size: 220% 220%;
+  box-shadow: 0 24px 60px -20px rgba(245, 158, 11, 0.45);
+  animation: splashGradient 3.4s ease infinite, splashPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes splashGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes splashPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.splash-bar {
+  width: 160px;
+  height: 3px;
+  margin: 0 auto 2.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.splash-bar span {
+  display: block;
+  width: 40%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f59e0b, #f472b6, #22d3ee);
+  animation: splashLoad 1.6s ease-in-out infinite;
+}
+
+@keyframes splashLoad {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(360%); }
+}
+
+.splash-credit {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.splash-dev {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
+.splash-dev strong { color: var(--ink-0); }
+
+.splash-links {
+  margin-top: 0.55rem;
+  font-size: 0.82rem;
+}
+
+.splash-links a {
+  color: #fbbf24;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s var(--ease);
+}
+
+.splash-links a:hover { border-color: currentColor; }
+
+.splash-links .dot-sep { margin: 0 0.5rem; color: var(--ink-2); }
+
+.splash-skip {
+  margin-top: 2.2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  color: var(--ink-2);
+  opacity: 0.7;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
 main.home { max-width: 980px; padding-top: 4.5rem; }
 
 .hero {

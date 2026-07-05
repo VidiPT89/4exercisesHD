@@ -6,6 +6,7 @@ const translations = {
     'nav.conversor': '🌡️ Temperatura',
     'nav.palindromo': '🔁 Palíndromo',
     'footer.license': 'MIT License · <a href="https://github.com/VidiPT89/4exercisesHD" target="_blank" rel="noopener">Código no GitHub</a>',
+    'splash.skip': 'toque para continuar',
 
     'home.pageTitle': '4 Exercises — Desafios de Lógica em JavaScript',
     'home.metaDesc': 'Quatro exercícios interativos de JavaScript: anagrama, contador de vogais, conversor de temperatura e palíndromo. Por David Arsénio Martins.',
@@ -100,6 +101,7 @@ const translations = {
     'nav.conversor': '🌡️ Temperature',
     'nav.palindromo': '🔁 Palindrome',
     'footer.license': 'MIT License · <a href="https://github.com/VidiPT89/4exercisesHD" target="_blank" rel="noopener">Code on GitHub</a>',
+    'splash.skip': 'tap to continue',
 
     'home.pageTitle': '4 Exercises — JavaScript Logic Challenges',
     'home.metaDesc': 'Four interactive JavaScript exercises: anagram, vowel counter, temperature converter and palindrome. By David Arsénio Martins.',
