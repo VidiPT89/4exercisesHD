@@ -14,7 +14,7 @@
 }
 
 .preview:empty::before {
-  content: 'A pré-visualização das vogais aparece aqui enquanto escreves...';
+  content: attr(data-empty-text);
   color: var(--ink-2);
   font-size: 0.85rem;
 }

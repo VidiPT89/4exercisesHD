@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Conversor de Temperatura — 4 Exercises</title>
-<meta name="description" content="Converte temperaturas entre Celsius e Fahrenheit com um termómetro animado em tempo real." />
+<title data-i18n="conversor.pageTitle">Conversor de Temperatura — 4 Exercises</title>
+<meta name="description" data-i18n-content="conversor.metaDesc" content="Converte temperaturas entre Celsius e Fahrenheit com um termómetro animado em tempo real." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230b0d16'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle'%3E%F0%9F%8C%A1%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="stylesheet" href="css/style.css" />
@@ -21,40 +21,46 @@
 <header class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="brand"><span class="brand-mark">4x</span>4 Exercises</a>
-    <nav class="nav-links">
-      <a href="anagrama.html">🔤 Anagrama</a>
-      <a href="contador.html">🔢 Vogais</a>
-      <a href="conversor.html">🌡️ Temperatura</a>
-      <a href="palindromo.html">🔁 Palíndromo</a>
-    </nav>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="anagrama.html" data-i18n="nav.anagrama">🔤 Anagrama</a>
+        <a href="contador.html" data-i18n="nav.contador">🔢 Vogais</a>
+        <a href="conversor.html" data-i18n="nav.conversor">🌡️ Temperatura</a>
+        <a href="palindromo.html" data-i18n="nav.palindromo">🔁 Palíndromo</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
   </div>
 </header>
 
 <main>
   <section class="exercise-hero">
-    <span class="badge">Exercício 03 · Matemática</span>
-    <h1>Conversor de Temperatura</h1>
-    <p class="lead">Converte valores entre Celsius e Fahrenheit e observa o termómetro a reagir em tempo real.</p>
+    <span class="badge" data-i18n="conversor.badge">Exercício 03 · Matemática</span>
+    <h1 data-i18n="conversor.h1">Conversor de Temperatura</h1>
+    <p class="lead" data-i18n="conversor.lead">Converte valores entre Celsius e Fahrenheit e observa o termómetro a reagir em tempo real.</p>
   </section>
 
   <section class="panel">
     <div class="row-2">
       <div class="field">
-        <label for="valor">Temperatura</label>
-        <input class="input" type="number" id="valor" placeholder="Escreve a temperatura" step="any" />
+        <label for="valor" data-i18n="conversor.labelValor">Temperatura</label>
+        <input class="input" type="number" id="valor" data-i18n-placeholder="conversor.placeholderValor" placeholder="Escreve a temperatura" step="any" />
       </div>
       <div class="field">
-        <label for="tipo">Conversão</label>
+        <label for="tipo" data-i18n="conversor.labelTipo">Conversão</label>
         <select class="input" id="tipo">
-          <option value="cf">Celsius → Fahrenheit</option>
-          <option value="fc">Fahrenheit → Celsius</option>
+          <option value="cf" data-i18n="conversor.optionCF">Celsius → Fahrenheit</option>
+          <option value="fc" data-i18n="conversor.optionFC">Fahrenheit → Celsius</option>
         </select>
       </div>
     </div>
 
     <div class="actions">
-      <button class="btn btn-primary" onclick="converter()">Converter</button>
-      <button class="btn btn-ghost" onclick="limpar()">Limpar</button>
+      <button class="btn btn-primary" onclick="converter()" data-i18n="conversor.btnConvert">Converter</button>
+      <button class="btn btn-ghost" onclick="limpar()" data-i18n="conversor.btnClear">Limpar</button>
     </div>
 
     <div class="result" id="resultado"></div>
@@ -63,15 +69,15 @@
       <div class="thermo"><div class="thermo-fill" id="thermoFill"></div></div>
       <div class="gauge-info">
         <div class="gauge-value" id="gaugeValue">--</div>
-        <div class="gauge-sub" id="gaugeSub">Escreve um valor para veres o resultado aqui</div>
+        <div class="gauge-sub" id="gaugeSub" data-i18n="conversor.gaugeDefault">Escreve um valor para veres o resultado aqui</div>
         <div class="gauge-scale"><span class="gauge-marker" id="gaugeMarker" style="left:50%"></span></div>
       </div>
     </div>
 
     <details class="how">
-      <summary>Como funciona o código</summary>
+      <summary data-i18n="conversor.howSummary">Como funciona o código</summary>
       <div class="how-body">
-        <p>O valor é convertido para número com <code>parseFloat</code>. Depois é aplicada a fórmula certa consoante o tipo de conversão escolhido, e o resultado é arredondado a duas casas decimais com <code>toFixed(2)</code>.</p>
+        <p data-i18n-html="conversor.howBody">O valor é convertido para número com <code>parseFloat</code>. Depois é aplicada a fórmula certa consoante o tipo de conversão escolhido, e o resultado é arredondado a duas casas decimais com <code>toFixed(2)</code>.</p>
         <pre>C → F:  (valor * 9 / 5) + 32
 F → C:  (valor - 32) * 5 / 9</pre>
       </div>
@@ -81,9 +87,10 @@ F → C:  (valor - 32) * 5 / 9</pre>
 
 <footer class="site-footer">
   <p>Developed by <strong>David Arsénio Martins</strong> — <a href="https://ividi.dev/" target="_blank" rel="noopener">ividi.dev</a></p>
-  <p class="fine-print">MIT License · <a href="https://github.com/VidiPT89/4exercisesHD" target="_blank" rel="noopener">Código no GitHub</a></p>
+  <p class="fine-print" data-i18n-html="footer.license">MIT License · <a href="https://github.com/VidiPT89/4exercisesHD" target="_blank" rel="noopener">Código no GitHub</a></p>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/app.js"></script>
 <script src="js/conversor.js"></script>
 </body>

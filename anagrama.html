@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Anagrama — 4 Exercises</title>
-<meta name="description" content="Verifica se duas palavras são anagramas, com visualização animada das letras ordenadas." />
+<title data-i18n="anagrama.pageTitle">Anagrama — 4 Exercises</title>
+<meta name="description" data-i18n-content="anagrama.metaDesc" content="Verifica se duas palavras são anagramas, com visualização animada das letras ordenadas." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230b0d16'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle'%3E%F0%9F%94%A4%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="stylesheet" href="css/style.css" />
@@ -21,56 +21,62 @@
 <header class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="brand"><span class="brand-mark">4x</span>4 Exercises</a>
-    <nav class="nav-links">
-      <a href="anagrama.html">🔤 Anagrama</a>
-      <a href="contador.html">🔢 Vogais</a>
-      <a href="conversor.html">🌡️ Temperatura</a>
-      <a href="palindromo.html">🔁 Palíndromo</a>
-    </nav>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="anagrama.html" data-i18n="nav.anagrama">🔤 Anagrama</a>
+        <a href="contador.html" data-i18n="nav.contador">🔢 Vogais</a>
+        <a href="conversor.html" data-i18n="nav.conversor">🌡️ Temperatura</a>
+        <a href="palindromo.html" data-i18n="nav.palindromo">🔁 Palíndromo</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">PT</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
   </div>
 </header>
 
 <main>
   <section class="exercise-hero">
-    <span class="badge">Exercício 01 · Strings</span>
-    <h1>Anagrama</h1>
-    <p class="lead">Duas palavras são anagramas quando têm exatamente as mesmas letras, só que por outra ordem. Escreve duas palavras e descobre.</p>
+    <span class="badge" data-i18n="anagrama.badge">Exercício 01 · Strings</span>
+    <h1 data-i18n="anagrama.h1">Anagrama</h1>
+    <p class="lead" data-i18n="anagrama.lead">Duas palavras são anagramas quando têm exatamente as mesmas letras, só que por outra ordem. Escreve duas palavras e descobre.</p>
   </section>
 
   <section class="panel">
     <div class="row-2">
       <div class="field">
-        <label for="palavra1">Palavra 1</label>
-        <input class="input" type="text" id="palavra1" placeholder="ex: listen" autocomplete="off" />
+        <label for="palavra1" data-i18n="anagrama.label1">Palavra 1</label>
+        <input class="input" type="text" id="palavra1" data-i18n-placeholder="anagrama.placeholder1" placeholder="ex: listen" autocomplete="off" />
       </div>
       <div class="field">
-        <label for="palavra2">Palavra 2</label>
-        <input class="input" type="text" id="palavra2" placeholder="ex: silent" autocomplete="off" />
+        <label for="palavra2" data-i18n="anagrama.label2">Palavra 2</label>
+        <input class="input" type="text" id="palavra2" data-i18n-placeholder="anagrama.placeholder2" placeholder="ex: silent" autocomplete="off" />
       </div>
     </div>
 
     <div class="actions">
-      <button class="btn btn-primary" onclick="verificar()">Verificar</button>
-      <button class="btn btn-ghost" onclick="limpar()">Limpar</button>
+      <button class="btn btn-primary" onclick="verificar()" data-i18n="anagrama.btnCheck">Verificar</button>
+      <button class="btn btn-ghost" onclick="limpar()" data-i18n="anagrama.btnClear">Limpar</button>
     </div>
 
     <div class="result" id="resultado"></div>
 
     <div class="tiles-wrap" id="tilesWrap">
       <div class="tiles-row">
-        <span class="tiles-label">Palavra 1 ordenada</span>
+        <span class="tiles-label" data-i18n="anagrama.tilesLabel1">Palavra 1 ordenada</span>
         <div class="tiles" id="tiles1"></div>
       </div>
       <div class="tiles-row">
-        <span class="tiles-label">Palavra 2 ordenada</span>
+        <span class="tiles-label" data-i18n="anagrama.tilesLabel2">Palavra 2 ordenada</span>
         <div class="tiles" id="tiles2"></div>
       </div>
     </div>
 
     <details class="how">
-      <summary>Como funciona o código</summary>
+      <summary data-i18n="anagrama.howSummary">Como funciona o código</summary>
       <div class="how-body">
-        <p>Cada palavra é passada para minúsculas, sem espaços, depois dividida em letras com <code>split("")</code>, ordenada alfabeticamente com <code>sort()</code> e reconstruída com <code>join("")</code>. Se as duas strings resultantes forem iguais, são anagramas.</p>
+        <p data-i18n-html="anagrama.howBody">Cada palavra é passada para minúsculas, sem espaços, depois dividida em letras com <code>split("")</code>, ordenada alfabeticamente com <code>sort()</code> e reconstruída com <code>join("")</code>. Se as duas strings resultantes forem iguais, são anagramas.</p>
         <pre>a = a.toLowerCase().replace(/ /g, "").split("").sort().join("");
 b = b.toLowerCase().replace(/ /g, "").split("").sort().join("");
 a === b // true → anagramas</pre>
@@ -81,9 +87,10 @@ a === b // true → anagramas</pre>
 
 <footer class="site-footer">
   <p>Developed by <strong>David Arsénio Martins</strong> — <a href="https://ividi.dev/" target="_blank" rel="noopener">ividi.dev</a></p>
-  <p class="fine-print">MIT License · <a href="https://github.com/VidiPT89/4exercisesHD" target="_blank" rel="noopener">Código no GitHub</a></p>
+  <p class="fine-print" data-i18n-html="footer.license">MIT License · <a href="https://github.com/VidiPT89/4exercisesHD" target="_blank" rel="noopener">Código no GitHub</a></p>
 </footer>
 
+<script src="js/i18n.js"></script>
 <script src="js/app.js"></script>
 <script src="js/anagrama.js"></script>
 </body>

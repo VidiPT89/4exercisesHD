@@ -44,7 +44,7 @@ function verificar() {
     input.classList.remove('shake');
     void input.offsetWidth;
     input.classList.add('shake');
-    setResultado(resultado, 'err', 'Escreve algum texto primeiro!');
+    setResultado(resultado, 'err', t('palindromo.msg.empty'));
     return;
   }
 
@@ -54,11 +54,11 @@ function verificar() {
   // compara o texto inserido com o texto invertido
   if (texto === invertido) {
     // se forem iguais, é palíndromo
-    setResultado(resultado, 'ok', 'É sim palíndromo!');
+    setResultado(resultado, 'ok', t('palindromo.msg.ok'));
     lancarConfetti();
   } else {
     // se forem diferentes, não é palíndromo
-    setResultado(resultado, 'err', 'Não é palíndromo!');
+    setResultado(resultado, 'err', t('palindromo.msg.err'));
   }
 }
 
@@ -79,4 +79,9 @@ function limpar() {
 document.getElementById('texto').addEventListener('input', atualizarEspelho);
 document.getElementById('texto').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') verificar();
+});
+
+document.addEventListener('langchange', () => {
+  const resultado = document.getElementById('resultado');
+  if (resultado.classList.contains('show')) verificar();
 });

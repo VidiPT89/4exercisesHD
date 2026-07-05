@@ -19,7 +19,8 @@ function atualizarGauge(celsius, texto) {
   document.getElementById('thermoFill').style.height = pct + '%';
   document.getElementById('gaugeMarker').style.left = pct + '%';
   document.getElementById('gaugeValue').textContent = texto;
-  document.getElementById('gaugeSub').textContent = celsius <= 0 ? 'Gelado ❄️' : celsius < 20 ? 'Fresco' : celsius < 35 ? 'Ameno ☀️' : 'Quente 🔥';
+  const key = celsius <= 0 ? 'conversor.gauge.freezing' : celsius < 20 ? 'conversor.gauge.cool' : celsius < 35 ? 'conversor.gauge.mild' : 'conversor.gauge.hot';
+  document.getElementById('gaugeSub').textContent = t(key);
 }
 
 // codigo de identificar
@@ -34,7 +35,7 @@ function converter() {
     input.classList.remove('shake');
     void input.offsetWidth;
     input.classList.add('shake');
-    setResultado(resultado, 'err', 'Escreve um número válido.');
+    setResultado(resultado, 'err', t('conversor.msg.invalid'));
     return;
   }
 
@@ -65,9 +66,18 @@ function limpar() {
   document.getElementById('thermoFill').style.height = '10%';
   document.getElementById('gaugeMarker').style.left = '50%';
   document.getElementById('gaugeValue').textContent = '--';
-  document.getElementById('gaugeSub').textContent = 'Escreve um valor para veres o resultado aqui';
+  document.getElementById('gaugeSub').textContent = t('conversor.gaugeDefault');
 }
 
 document.getElementById('valor').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') converter();
+});
+
+document.addEventListener('langchange', () => {
+  const resultado = document.getElementById('resultado');
+  if (resultado.classList.contains('show')) {
+    converter();
+  } else {
+    document.getElementById('gaugeSub').textContent = t('conversor.gaugeDefault');
+  }
 });

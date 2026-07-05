@@ -45,7 +45,7 @@ function verificar() {
         inp.classList.add('shake');
       }
     });
-    setResultado(resultado, 'err', 'Escreve as duas palavras primeiro!');
+    setResultado(resultado, 'err', t('anagrama.msg.empty'));
     document.getElementById('tilesWrap').classList.remove('show');
     return;
   }
@@ -56,7 +56,7 @@ function verificar() {
 
   const isAnagram = lettersA.join('') === lettersB.join('');
 
-  setResultado(resultado, isAnagram ? 'ok' : 'err', isAnagram ? 'Boa! São anagramas!' : 'Ups... Não são anagramas!');
+  setResultado(resultado, isAnagram ? 'ok' : 'err', t(isAnagram ? 'anagrama.msg.ok' : 'anagrama.msg.err'));
 
   renderTiles(document.getElementById('tiles1'), lettersA, lettersB);
   renderTiles(document.getElementById('tiles2'), lettersB, lettersA);
@@ -77,4 +77,9 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && (document.activeElement.id === 'palavra1' || document.activeElement.id === 'palavra2')) {
     verificar();
   }
+});
+
+document.addEventListener('langchange', () => {
+  const resultado = document.getElementById('resultado');
+  if (resultado.classList.contains('show')) verificar();
 });

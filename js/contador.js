@@ -56,12 +56,12 @@ function contador() {
     input.classList.remove('shake');
     void input.offsetWidth;
     input.classList.add('shake');
-    setResultado(resultado, 'err', 'Escreve algum texto primeiro!');
+    setResultado(resultado, 'err', t('contador.msg.empty'));
     document.getElementById('counterBig').style.display = 'none';
     return;
   }
 
-  setResultado(resultado, 'ok', 'O total de vogais: ' + total);
+  setResultado(resultado, 'ok', t('contador.msg.result') + total);
 
   const counterBig = document.getElementById('counterBig');
   counterBig.style.display = 'flex';
@@ -81,4 +81,16 @@ function limpar() {
 document.getElementById('texto').addEventListener('input', atualizarPreview);
 document.getElementById('texto').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') contador();
+});
+
+function atualizarPreviewEmptyText() {
+  document.getElementById('preview').setAttribute('data-empty-text', t('contador.previewEmpty'));
+}
+
+atualizarPreviewEmptyText();
+
+document.addEventListener('langchange', () => {
+  atualizarPreviewEmptyText();
+  const resultado = document.getElementById('resultado');
+  if (resultado.classList.contains('show')) contador();
 });
